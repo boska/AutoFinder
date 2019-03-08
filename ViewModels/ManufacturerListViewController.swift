@@ -1,44 +1,27 @@
-//
-//  ViewController.swift
-//  autofinder
-//
-//  Created by Boska on 2019/3/8.
-//  Copyright © 2019 boska. All rights reserved.
-//
-
 import UIKit
 import RxSwift
 import RxCocoa
 
-class ManufacturerListViewController: UITableViewController {
+class ManufacturerListViewController: UIViewController, UITableViewDelegate {
+  @IBOutlet weak var tableView: UITableView!
   let disposeBag = DisposeBag()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Manufacturers"
-    tableView.dataSource = nil
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
     let viewModel = ManufacturerListViewModel()
-    viewModel.rx.items.drive(tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (_, data, cell) in
-      cell.textLabel?.text = data.name
-      //cell.configure(data: data)
+
+    viewModel.rx.items.drive(tableView.rx.items(cellIdentifier: "ManufacturerCell", cellType: ManufacturerCell.self)) { (index, data, cell) in
+      cell.nameLabel.text = data.name
     }.disposed(by: disposeBag)
 
     tableView.rx.nearBottom.asObservable().throttle(2, latest: false, scheduler: MainScheduler.instance).bind(to: viewModel.loadNextPage).disposed(by: disposeBag)
-    
+
+    tableView.rx.willDisplayCell.subscribe(onNext: { cell, index in
+     cell.contentView.backgroundColor = index.row % 2 == 0 ? .lightGray : .gray
+    }).disposed(by: disposeBag)
+
   }
 }
 
-extension Reactive where Base: UITableView {
-  var nearBottom: Signal<()> {
-    func isNearBottomEdge(tableView: UITableView, edgeOffset: CGFloat = 20.0) -> Bool {
-      return tableView.contentOffset.y + tableView.frame.size.height + edgeOffset > tableView.contentSize.height
-    }
-    return self.contentOffset.asDriver()
-      .flatMap { _ in
-        return isNearBottomEdge(tableView: self.base, edgeOffset: 20.0)
-          ? Signal.just(())
-          : Signal.empty()
-    }
-  }
-}
