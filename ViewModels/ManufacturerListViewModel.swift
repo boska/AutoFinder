@@ -14,7 +14,7 @@ class ManufacturerListViewModel: ReactiveCompatible {
     let _loadNextPage = PublishSubject<Void>()
     self.loadNextPage = _loadNextPage.asObserver()
     manufacturers = _loadNextPage.enumerated().flatMap({
-      autoService.getManufacturers(byPage: $0.index).debug()
+      autoService.getManufacturers(byPage: $0.index)
     }).catchError { error in
       //handle error here sent to some subject? I really not sure yet
       return Observable.empty()
