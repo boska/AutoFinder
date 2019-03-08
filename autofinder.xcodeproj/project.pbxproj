@@ -95,10 +95,44 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8D8888BE223257D0007AA323 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		8D8888BF223257E5007AA323 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8DADF52F223253DE001926D7 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8D8888C022325821007AA323 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8D8888C122325861007AA323 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8DADF531223253DE001926D7 /* ViewController.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		8DADF523223253DE001926D7 = {
 			isa = PBXGroup;
 			children = (
-				8DADF52E223253DE001926D7 /* autofinder */,
+				8D8888C122325861007AA323 /* ViewModels */,
+				8D8888C022325821007AA323 /* Models */,
+				8D8888BF223257E5007AA323 /* App */,
+				8D8888BE223257D0007AA323 /* Networking */,
+				8DADF52E223253DE001926D7 /* Resources */,
 				8DADF543223253DE001926D7 /* autofinderTests */,
 				8DADF54E223253DE001926D7 /* autofinderUITests */,
 				8DADF52D223253DE001926D7 /* Products */,
@@ -117,17 +151,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8DADF52E223253DE001926D7 /* autofinder */ = {
+		8DADF52E223253DE001926D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8DADF52F223253DE001926D7 /* AppDelegate.swift */,
-				8DADF531223253DE001926D7 /* ViewController.swift */,
 				8DADF533223253DE001926D7 /* Main.storyboard */,
 				8DADF536223253DE001926D7 /* Assets.xcassets */,
 				8DADF538223253DE001926D7 /* LaunchScreen.storyboard */,
 				8DADF53B223253DE001926D7 /* Info.plist */,
 			);
-			path = autofinder;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		8DADF543223253DE001926D7 /* autofinderTests */ = {
