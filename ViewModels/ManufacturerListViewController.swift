@@ -2,16 +2,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ManufacturerListViewController: UIViewController, UITableViewDelegate {
-  @IBOutlet weak var tableView: UITableView!
+class ManufacturerListViewController: UITableViewController {
   let disposeBag = DisposeBag()
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    tableView.dataSource = nil
+
     title = "Manufacturers"
 
     let viewModel = ManufacturerListViewModel()
-
     viewModel.rx.items
       .drive(tableView.rx.items(cellIdentifier: "ManufacturerCell", cellType: ManufacturerCell.self)) {
         (_, data, cell) in

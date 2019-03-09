@@ -3,7 +3,9 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base == ManufacturerListViewModel {
-  var items: Driver<[Manufacturer]> { return base.manufacturers.asDriver(onErrorJustReturn: []) }
+  var items: Driver<[Manufacturer]> {
+    return base.manufacturers.asDriver(onErrorJustReturn: [])
+  }
 }
 
 class ManufacturerListViewModel: ReactiveCompatible {
