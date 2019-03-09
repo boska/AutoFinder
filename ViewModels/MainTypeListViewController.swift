@@ -1,6 +1,4 @@
-import UIKit
 import RxSwift
-import RxCocoa
 
 final class MainTypeListViewController: ListViewController {
   private let viewModel: MainTypeListViewModel
