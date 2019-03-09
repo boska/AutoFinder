@@ -31,37 +31,10 @@
         <scene sceneID="2ad-1r-aeX">
             <objects>
                 <tableViewController id="nDZ-hb-nmY" customClass="ManufacturerListViewController" customModule="autofinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="i7P-fU-U6X">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="i7P-fU-U6X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ManufacturerCell" rowHeight="101" id="IIU-5L-VAL" customClass="ManufacturerCell" customModule="autofinder" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="101"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IIU-5L-VAL" id="U8D-k8-E4I">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngl-7o-25q">
-                                            <rect key="frame" x="31" y="26" width="313" height="49"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ngl-7o-25q" secondAttribute="trailing" constant="15" id="DQ5-LT-x9t"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ngl-7o-25q" secondAttribute="bottom" constant="15" id="j3T-UF-NH2"/>
-                                        <constraint firstItem="ngl-7o-25q" firstAttribute="leading" secondItem="U8D-k8-E4I" secondAttribute="leadingMargin" constant="15" id="nYi-Hg-g39"/>
-                                        <constraint firstItem="ngl-7o-25q" firstAttribute="top" secondItem="U8D-k8-E4I" secondAttribute="topMargin" constant="15" id="oXU-AA-ruZ"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="nameLabel" destination="ngl-7o-25q" id="ueZ-7P-qJQ"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="nDZ-hb-nmY" id="ydx-A0-E8t"/>
                             <outlet property="delegate" destination="nDZ-hb-nmY" id="a6q-DA-YHT"/>
