@@ -25,6 +25,8 @@
 		8DADF53A223253DE001926D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DADF538223253DE001926D7 /* LaunchScreen.storyboard */; };
 		8DADF545223253DE001926D7 /* autofinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADF544223253DE001926D7 /* autofinderTests.swift */; };
 		8DADF550223253DE001926D7 /* autofinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADF54F223253DE001926D7 /* autofinderUITests.swift */; };
+		8DD4F503223407B100D935EF /* Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD4F502223407B100D935EF /* Secret.plist */; };
+		8DD4F50522340A5B00D935EF /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4F50422340A5B00D935EF /* Secret.swift */; };
 		A5375DAB58FA2479B90572CF /* Pods_autofinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5327214CE3DD880202D4708 /* Pods_autofinderTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		8DADF54B223253DE001926D7 /* autofinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = autofinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DADF54F223253DE001926D7 /* autofinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = autofinderUITests.swift; sourceTree = "<group>"; };
 		8DADF551223253DE001926D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DD4F502223407B100D935EF /* Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.plist; sourceTree = "<group>"; };
+		8DD4F50422340A5B00D935EF /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		96D5A3C2FD42A40F8B0F6CC5 /* Pods-autofinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-autofinderTests.debug.xcconfig"; path = "Target Support Files/Pods-autofinderTests/Pods-autofinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5327214CE3DD880202D4708 /* Pods_autofinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_autofinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8C9C8E20E6B3F59813DD5B /* Pods-autofinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-autofinder.release.xcconfig"; path = "Target Support Files/Pods-autofinder/Pods-autofinder.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				8DADF536223253DE001926D7 /* Assets.xcassets */,
 				8DADF538223253DE001926D7 /* LaunchScreen.storyboard */,
 				8DADF53B223253DE001926D7 /* Info.plist */,
+				8DD4F502223407B100D935EF /* Secret.plist */,
+				8DD4F50422340A5B00D935EF /* Secret.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DADF53A223253DE001926D7 /* LaunchScreen.storyboard in Resources */,
+				8DD4F503223407B100D935EF /* Secret.plist in Resources */,
 				8DADF537223253DE001926D7 /* Assets.xcassets in Resources */,
 				8D8888D32233A271007AA323 /* Cell.xib in Resources */,
 				8DADF535223253DE001926D7 /* Main.storyboard in Resources */,
@@ -465,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DADF532223253DE001926D7 /* ManufacturerListViewController.swift in Sources */,
+				8DD4F50522340A5B00D935EF /* Secret.swift in Sources */,
 				8D8888CD22329846007AA323 /* UITableView+Rx.swift in Sources */,
 				8D8888D122339F95007AA323 /* MainTypeListViewModel.swift in Sources */,
 				8D8888CF22339F83007AA323 /* MainTypeListViewController.swift in Sources */,
