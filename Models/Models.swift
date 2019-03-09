@@ -1,6 +1,10 @@
 import Foundation
 
 struct Manufacturer {
-  let name: String
   let id: String
+  let name: String
+}
+
+struct MainType {
+  let name: String
 }

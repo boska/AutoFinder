@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		328085EBE66B57929DF64C21 /* Pods_autofinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E795927D272101E32BBB528 /* Pods_autofinder.framework */; };
 		8D8888C32232591A007AA323 /* AutoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8888C22232591A007AA323 /* AutoService.swift */; };
-		8D8888C52232599E007AA323 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8888C42232599E007AA323 /* Manufacturer.swift */; };
+		8D8888C52232599E007AA323 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8888C42232599E007AA323 /* Models.swift */; };
 		8D8888C7223260D6007AA323 /* ManufacturerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8888C6223260D6007AA323 /* ManufacturerListViewModel.swift */; };
 		8D8888C922328E0C007AA323 /* ManufacturerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8888C822328E0C007AA323 /* ManufacturerCell.swift */; };
 		8D8888CD22329846007AA323 /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8888CC22329846007AA323 /* UITableView+Rx.swift */; };
@@ -44,7 +44,7 @@
 		3E795927D272101E32BBB528 /* Pods_autofinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_autofinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		669E7204EA9EDCE1E25F4FA8 /* Pods-autofinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-autofinder.debug.xcconfig"; path = "Target Support Files/Pods-autofinder/Pods-autofinder.debug.xcconfig"; sourceTree = "<group>"; };
 		8D8888C22232591A007AA323 /* AutoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoService.swift; sourceTree = "<group>"; };
-		8D8888C42232599E007AA323 /* Manufacturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manufacturer.swift; sourceTree = "<group>"; };
+		8D8888C42232599E007AA323 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		8D8888C6223260D6007AA323 /* ManufacturerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerListViewModel.swift; sourceTree = "<group>"; };
 		8D8888C822328E0C007AA323 /* ManufacturerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerCell.swift; sourceTree = "<group>"; };
 		8D8888CC22329846007AA323 /* UITableView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		8D8888C022325821007AA323 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8D8888C42232599E007AA323 /* Manufacturer.swift */,
+				8D8888C42232599E007AA323 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -451,7 +451,7 @@
 				8DADF532223253DE001926D7 /* ManufacturerListViewController.swift in Sources */,
 				8D8888CD22329846007AA323 /* UITableView+Rx.swift in Sources */,
 				8DADF530223253DE001926D7 /* AppDelegate.swift in Sources */,
-				8D8888C52232599E007AA323 /* Manufacturer.swift in Sources */,
+				8D8888C52232599E007AA323 /* Models.swift in Sources */,
 				8D8888C7223260D6007AA323 /* ManufacturerListViewModel.swift in Sources */,
 				8D8888C922328E0C007AA323 /* ManufacturerCell.swift in Sources */,
 				8D8888C32232591A007AA323 /* AutoService.swift in Sources */,
