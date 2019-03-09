@@ -8,7 +8,7 @@ extension Reactive where Base == ManufacturerListViewModel {
 
 class ManufacturerListViewModel: ReactiveCompatible {
   let loadNextPage: AnyObserver<()>
-  let manufacturers: Observable<[Manufacturer]>
+  fileprivate let manufacturers: Observable<[Manufacturer]>
 
   init(autoService: AutoService = AutoService()) {
     let _loadNextPage = PublishSubject<Void>()
@@ -18,7 +18,7 @@ class ManufacturerListViewModel: ReactiveCompatible {
     }).catchError { error in
       //handle error here sent to some subject? I really not sure yet
       return Observable.empty()
-      }
+    }
       .scan([], accumulator: { $0 + $1 })
       .map {
         $0.sorted(by: { $0.name <= $1.name })
