@@ -2,18 +2,19 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ManufacturerListViewController: UITableViewController {
-  let disposeBag = DisposeBag()
+final class ManufacturerListViewController: ListViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.dataSource = nil
-
-    title = "Manufacturers"
 
     let viewModel = ManufacturerListViewModel()
+
+    viewModel.rx.title
+      .bind(to: rx.title)
+      .disposed(by: disposeBag)
+
     viewModel.rx.items
-      .drive(tableView.rx.items(cellIdentifier: "ManufacturerCell", cellType: ManufacturerCell.self)) {
+      .drive(tableView.rx.items(cellIdentifier: "Cell", cellType: Cell.self)) {
         (_, data, cell) in
         cell.nameLabel.text = data.name
       }
@@ -25,14 +26,12 @@ class ManufacturerListViewController: UITableViewController {
       .bind(to: viewModel.loadNextPage)
       .disposed(by: disposeBag)
 
-    tableView.rx.willDisplayCell
-      .subscribe(onNext: { cell, index in
-        cell.contentView.backgroundColor = index.row % 2 == 0 ? .lightGray : .gray })
-      .disposed(by: disposeBag)
-
-    tableView.rx.modelSelected(Manufacturer.self).debug().subscribe().disposed(by: disposeBag)
-
-
+    tableView.rx.modelSelected(Manufacturer.self)
+      .subscribe(onNext: { manufacturer in
+        let vm = MainTypeListViewModel(with: manufacturer, autoService: AutoService.shared)
+        let vc = MainTypeListViewController(viewModel: vm)
+        self.navigationController?.pushViewController(vc, animated: true)
+      }).disposed(by: disposeBag)
   }
 }
 
