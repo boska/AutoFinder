@@ -17,6 +17,7 @@
 		8D8888D122339F95007AA323 /* MainTypeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8888D022339F95007AA323 /* MainTypeListViewModel.swift */; };
 		8D8888D32233A271007AA323 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8888D22233A271007AA323 /* Cell.xib */; };
 		8D8888D52233B142007AA323 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8888D42233B142007AA323 /* ListViewController.swift */; };
+		8D8888D72233CA30007AA323 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8888D62233CA30007AA323 /* UIViewController+Alert.swift */; };
 		8DADF530223253DE001926D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADF52F223253DE001926D7 /* AppDelegate.swift */; };
 		8DADF532223253DE001926D7 /* ManufacturerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADF531223253DE001926D7 /* ManufacturerListViewController.swift */; };
 		8DADF535223253DE001926D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DADF533223253DE001926D7 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		8D8888D022339F95007AA323 /* MainTypeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypeListViewModel.swift; sourceTree = "<group>"; };
 		8D8888D22233A271007AA323 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		8D8888D42233B142007AA323 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		8D8888D62233CA30007AA323 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		8DADF52C223253DE001926D7 /* autofinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = autofinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DADF52F223253DE001926D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DADF531223253DE001926D7 /* ManufacturerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerListViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8888CC22329846007AA323 /* UITableView+Rx.swift */,
+				8D8888D62233CA30007AA323 /* UIViewController+Alert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				8D8888CD22329846007AA323 /* UITableView+Rx.swift in Sources */,
 				8D8888D122339F95007AA323 /* MainTypeListViewModel.swift in Sources */,
 				8D8888CF22339F83007AA323 /* MainTypeListViewController.swift in Sources */,
+				8D8888D72233CA30007AA323 /* UIViewController+Alert.swift in Sources */,
 				8DADF530223253DE001926D7 /* AppDelegate.swift in Sources */,
 				8D8888C52232599E007AA323 /* Models.swift in Sources */,
 				8D8888C7223260D6007AA323 /* ManufacturerListViewModel.swift in Sources */,

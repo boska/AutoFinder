@@ -42,10 +42,7 @@ final class MainTypeListViewController: ListViewController {
         guard let title = self?.title else {
           return
         }
-        let alert = UIAlertController(title: "\(title) - \(type.name)", message: nil, preferredStyle: .alert)
-        let dismiss = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
-        alert.addAction(dismiss)
-        self?.present(alert, animated: true)
+       self?.presentAlert(title: "\(title) - \(type.name)")
       }).disposed(by: disposeBag)
 
   }
