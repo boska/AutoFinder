@@ -7,6 +7,14 @@ enum ResponseError: Error {
   case noMorePage
 }
 
+//extension ObservableType where E == (response: HTTPURLResponse, data: Data) {
+//  var cache: Observable<E> {
+//    return self.do(onNext: { response, data in
+//      print("cached \(response.url!.absoluteString)")
+//    })
+//  }
+//}
+
 final class AutoService {
   static let shared = AutoService(baseURL: "https://api.boska.dev/v1/car-types")
 
@@ -20,12 +28,20 @@ final class AutoService {
     self.baseURL = baseURL
     self.apiKey = Secret.loadFromPlist()?.apiKey ?? ""
   }
-
+  func requestJSON(from url: URL) -> Observable<Any> {
+    let request = URLRequest(url: url)
+    return session.rx.response(request: request).map { response in
+      do {
+        return try JSONSerialization.jsonObject(with: response.data, options: [])
+      } catch let error {
+        throw RxCocoaURLError.deserializationError(error: error)
+      }
+    }
+  }
   func getManufacturers(on page: Int) -> Observable<[Manufacturer]> {
     let url = URL(string: "\(baseURL)/manufacturer?page=\(page)&pageSize=\(defaultPageSize)&wa_key=\(apiKey)")!
-    return session.rx
-      .json(url: url)
-      .flatMap { json throws -> Observable<[Manufacturer]> in
+    return requestJSON(from: url)
+      .flatMap { json -> Observable<[Manufacturer]> in
         guard
           let json = json as? [String: Any],
           let dictionary = json["wkda"] as? [String: String]
