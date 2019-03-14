@@ -3,7 +3,7 @@ import RxCocoa
 
 extension Reactive where Base: UITableView {
   var nearBottom: Signal<()> {
-    func isNearBottomEdge(tableView: UITableView, edgeOffset: CGFloat = 30.0) -> Bool {
+    func isNearBottomEdge(tableView: UITableView, edgeOffset: CGFloat = 50.0) -> Bool {
       return tableView.contentOffset.y + tableView.frame.size.height + edgeOffset > tableView.contentSize.height
     }
     return self.contentOffset.asDriver()

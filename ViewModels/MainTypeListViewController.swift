@@ -26,7 +26,6 @@ final class MainTypeListViewController: ListViewController {
 
     tableView.rx.nearBottom
       .asObservable()
-      .throttle(2, latest: false, scheduler: MainScheduler.instance)
       .bind(to: viewModel.loadNextPage)
       .disposed(by: disposeBag)
 

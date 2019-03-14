@@ -17,7 +17,7 @@ struct ManufacturerListViewModel: ReactiveCompatible {
   init(autoService: AutoService = AutoService.shared) {
     let _loadNextPage = PublishSubject<Void>()
     self.loadNextPage = _loadNextPage.asObserver()
-    manufacturers = _loadNextPage
+    manufacturers = _loadNextPage.throttle(0.5, scheduler: MainScheduler.instance)
       .enumerated()
       .flatMap {
         autoService.getManufacturers(on: $0.index)

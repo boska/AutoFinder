@@ -24,6 +24,7 @@ struct MainTypeListViewModel: ReactiveCompatible {
     self.title = _title.asObservable()
 
     types = _loadNextPage
+      .throttle(0.5, scheduler: MainScheduler.instance)
       .enumerated()
       .flatMap {
         autoService.getMainTypes(with: manufacturer.id, on: $0.index)
