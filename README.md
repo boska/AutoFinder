@@ -1,6 +1,50 @@
-# AutoFinder
+# rx-1
 
-It's a RxSwift + MVVM exercise
+This is the best part of this project
+
+ManufacturerListViewModel have one input loadNextPage which is hooked by the uiscrollview scroll to bottom
+and have only one output show an array of Manufacturer
+
+
+```ManufacturerListViewModel.swift
+import RxSwift
+import RxCocoa
+
+extension Reactive where Base == ManufacturerListViewModel {
+  var items: Driver<[Manufacturer]> {
+    return base.manufacturers.asDriver(onErrorJustReturn: [])
+  }
+  var title: Observable<String> {
+    return Observable.just("Manufacturers")
+  }
+}
+
+struct ManufacturerListViewModel: ReactiveCompatible {
+  let loadNextPage: AnyObserver<()>
+  fileprivate let manufacturers: Observable<[Manufacturer]>
+
+  init(autoService: AutoService = AutoService.shared) {
+    let _loadNextPage = PublishSubject<Void>()
+    self.loadNextPage = _loadNextPage.asObserver()
+    manufacturers = _loadNextPage.throttle(0.5, scheduler: MainScheduler.instance)
+      //map void event into index
+      .enumerated()
+      //flap map into api service
+      .flatMap {
+        autoService.getManufacturers(on: $0.index)  
+      }.catchError { error in
+        //handle error here sent to some subject? I really not sure yet
+        return Observable.empty()
+      //sorting
+      }.map {
+        $0.sorted(by: { $0.name <= $1.name })
+      }
+      //scan concat result
+      .scan([], accumulator: { $0 + $1 })
+
+  }
+}
+```
 
 ## Prerequisites
 
