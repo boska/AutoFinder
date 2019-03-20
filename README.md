@@ -1,6 +1,7 @@
 # rx-1
 
-This is the best part of this project
+it has two UITableView fetch source from dependnt diffrent route of api
+
 ## Cons
 - There's still a confusing code between viewmodels
 - Naming still too verbose
