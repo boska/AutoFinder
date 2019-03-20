@@ -1,10 +1,18 @@
 # rx-1
 
 This is the best part of this project
+## Cons
+- There's still a confusing code between viewmodels
+- Naming still too verbose
+- Dependencies
+- MVC way on navigation
+- No test on Observables and Subjects
+## Pros
+
+- Clean view model for cyclic api call
 
 ManufacturerListViewModel have one input loadNextPage which is hooked by the uiscrollview scroll to bottom
 and have only one output show an array of Manufacturer
-
 
 ```ManufacturerListViewModel.swift
 import RxSwift
